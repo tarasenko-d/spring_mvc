@@ -10,5 +10,4 @@ public interface CarDao {
 
     List<Car> listCars(int counter);
 
-
 }

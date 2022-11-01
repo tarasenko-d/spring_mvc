@@ -12,8 +12,11 @@ public class CarServiceImp implements CarService {
 
     private final CarDao carDao;
 
+    private int maxCars;
+
     public CarServiceImp(CarDao carDao) {
         this.carDao = carDao;
+        maxCars = 4;
     }
 
     @Override
@@ -25,8 +28,8 @@ public class CarServiceImp implements CarService {
     @Override
     @Transactional(readOnly = true)
     public List<Car> listCars(int counter) {
-        return carDao.listCars(counter);
+        int min = Math.min(counter, maxCars);
+        return carDao.listCars(min);
     }
-
 
 }

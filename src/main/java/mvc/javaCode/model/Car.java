@@ -27,10 +27,10 @@ public class Car {
     @Column
     private int number;
 
-
     public Car(String mark, String color, int number) {
         this.mark = mark;
         this.color = color;
         this.number = number;
     }
+
 }
